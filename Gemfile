@@ -38,3 +38,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'simple_form', '3.1.0.rc1'
+gem 'nested_form'
