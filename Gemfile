@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -37,4 +37,14 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'simple_form', '3.1.0.rc1'
+gem 'nested_form'
+gem 'devise'
+gem 'devise-i18n'
+gem 'carrierwave'
+gem 'rails-i18n'
+gem 'enumerize'
+gem 'rails-assets-select2'
+gem 'rails-assets-bootstrap'
 
