@@ -40,6 +40,9 @@ gem 'spring',        group: :development
 
 gem 'simple_form', '3.1.0.rc1'
 gem 'nested_form'
-gem 'annotate'
 gem 'devise'
 gem 'devise-i18n'
+gem 'carrierwave'
+gem 'rails-i18n'
+gem 'enumerize'
+gem 'rails-assets-select2'

@@ -1,0 +1,22 @@
+<div class="page-header"><h2><%= Field.model_name.human %></h2></div>
+<table id="fields" class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <%= th_for Field, :name, :type, :required, :multiple, :option_items %>
+    </tr>
+  </thead>
+  <tbody>
+    <%= f.simple_fields_for :fields, wrapper: false do |ff| %>
+      <tr class="fields">
+        <td><%= ff.link_to_remove content_tag(:span, nil, class: 'glyphicon glyphicon-trash') %></td>
+        <td><%= ff.input_field :name, label: false %></td>
+        <td><%= ff.input_field :type, label: false, include_blank: false %></td>
+        <td><%= ff.input_field :required, label: false %></td>
+        <td><%= ff.input_field :multiple, label: false %></td>
+        <td class="col-sm-6"><%= ff.input_field :option_items, as: :string, label: false, class: 'select2-tags-array', data: {init: ff.object.option_items.to_json} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= f.link_to_add content_tag(:span, nil, class: 'glyphicon glyphicon-plus'), :fields, class: 'btn btn-xs btn-success', data: {target: '#fields'} %>
