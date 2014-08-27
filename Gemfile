@@ -46,3 +46,5 @@ gem 'carrierwave'
 gem 'rails-i18n'
 gem 'enumerize'
 gem 'rails-assets-select2'
+gem 'rails-assets-bootstrap'
+

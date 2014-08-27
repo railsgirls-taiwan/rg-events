@@ -67,12 +67,12 @@ module AdminHelper
     when 'textarea'
       text_area_tag input_name, input_value, class: 'form-control'
     when 'select'
-      select_tag input_name, options_for_select(field.options, input_value), include_blank: false, multiple: field.multiple, class: 'form-control'
+      select_tag input_name, options_for_select(field.option_items, input_value), include_blank: false, multiple: field.multiple, class: 'form-control'
     when 'checkbox'
       if field.multiple
         input_name += '[]'
         ret2 = ''.html_safe
-        field.options.each_with_index do |option, i|
+        field.option_items.each_with_index do |option, i|
           id = "check_#{i}"
           ret2 += content_tag :div, class: :radio do
             label_tag id, check_box_tag(input_name, option, Array(input_value).include?(option), id: id) + option
@@ -80,7 +80,7 @@ module AdminHelper
         end
       else
         ret2 = ''.html_safe
-        field.options.each_with_index do |option, i|
+        field.option_items.each_with_index do |option, i|
           id = "radio_#{i}"
           ret2 += content_tag :div, class: :radio do
             label_tag id, radio_button_tag(input_name, option, option == input_value, id: id) + option

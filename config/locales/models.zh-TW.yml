@@ -2,7 +2,7 @@ zh-TW:
   activerecord:
     models:
       user: 成員
-      form: 報名表
+      event: 報名表
       field: 欄位
       attendee: 報名
     attributes:
@@ -13,15 +13,15 @@ zh-TW:
         title: 標題
         description: 敘述
       field:
-        form_id:
+        event_id:
         name: 名稱
         type: 類別
         required: 必填
         multiple: 多選
-        options: 選項
+        option_items: 選項
       attendee:
         user: 報名者
-        form: 報名活動
+        event: 報名活動
   enumerize:
     field:
       type:
