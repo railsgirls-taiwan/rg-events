@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: 
+  name: MyString
+  type: 
+  required: false
+  multiple: false
+  option_items: MyString
+
+two:
+  event_id: 
+  name: MyString
+  type: 
+  required: false
+  multiple: false
+  option_items: MyString
