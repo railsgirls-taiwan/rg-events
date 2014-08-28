@@ -4,7 +4,7 @@
     <%= f.input :title %>
     <%= f.input :date %>
     <%= f.input :place %>
-    <%= f.input :description %>
+    <%= f.input :description, input_html: {class: :redactor} %>
     <%= render 'form_fields', f: f %>
   </div>
   <hr>
