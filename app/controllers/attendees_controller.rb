@@ -2,7 +2,7 @@ class AttendeesController < ApplicationController
   before_action :set_event, only: %i[new create]
 
   def index
-    @attendees = current_user.attendees.page(params[:page])
+    @attendees = current_user.attendees
   end
 
   def show
