@@ -2,16 +2,18 @@ zh-TW:
   activerecord:
     models:
       user: 成員
-      event: 報名表
+      event: 活動
       field: 欄位
       attendee: 報名
     attributes:
       user:
         email: 電子郵件
         password: 密碼
-      form:
-        title: 標題
-        description: 敘述
+      event:
+        title: 活動主題
+        date: 活動時間
+        place: 活動地點
+        description: 活動內容
       field:
         event_id:
         name: 名稱

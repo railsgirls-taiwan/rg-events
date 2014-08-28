@@ -1,9 +1,9 @@
-<h1><%= Admin::Event.model_name.human %> <%= link_to t('crud.new'), new_admin_event_path, class: 'btn btn-lg btn-success' %></h1>
-
-<table class="table table-striped table-condensed">
+<table class="table">
   <thead>
     <tr>
-      <%= th_for Admin::Event, :id, :title, :date, :place %>
+      <%= th_for Admin::Event, :date, :title, :place %>
+      <th></th>
+      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -12,7 +12,7 @@
   <tbody>
     <% @admin_events.each do |admin_event| %>
       <tr>
-        <%= td_for admin_event, :id, :title, :date, :place %>
+        <%= td_for admin_event, :date, :title, :place %>
         <td><%= link_to Attendee.model_name.human, [admin_event, Attendee] %></td>
         <%= td_action_for admin_event %>
       </tr>
