@@ -14,4 +14,6 @@ Rails.application.routes.draw do
       resources :attendees
     end
   end
+
+  resources :redactor_images, :events, only: :create
 end
