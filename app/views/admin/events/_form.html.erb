@@ -2,7 +2,7 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.input :date %>
+    <%= f.input :date, as: :string, input_html: { class: "datetime_picker" } %>
     <%= f.input :place %>
     <%= f.input :description, input_html: {class: :redactor} %>
     <%= render 'form_fields', f: f %>
@@ -12,3 +12,8 @@
     <%= f.button :submit, class: 'btn btn-lg btn-primary' %>
   </div>
 <% end %>
+<script type="text/javascript">
+  $('.datetime_picker').datetimepicker({
+    language: 'zh-TW'
+  });
+</script>

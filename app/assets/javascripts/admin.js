@@ -1,0 +1,11 @@
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require bootstrap
+//= require bootstrap-datetimepicker_min
+//= require bootstrap-datetimepicker_zh-TW
+//= require jquery_nested_form
+//= require redactor
+//= require redactor_zh_tw
+//= require select2
+//= require_tree ./admin
