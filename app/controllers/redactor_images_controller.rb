@@ -1,5 +1,4 @@
 class RedactorImagesController < ApplicationController
-
   def create
     if @image = RedactorImage.create(image_params)
       render json: {filelink: @image.image.thumb.url}
