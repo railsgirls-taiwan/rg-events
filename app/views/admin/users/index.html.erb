@@ -3,8 +3,7 @@
 <table class="table">
   <thead>
     <tr>
-      <%= th_for Admin::User, :id, :email %>
-      <th></th>
+      <%= th_for Admin::User, :id, :email, :admin %>
       <th></th>
       <th></th>
     </tr>
@@ -13,7 +12,7 @@
   <tbody>
     <% @admin_users.each do |admin_user| %>
       <tr>
-        <%= td_for admin_user, :id, :email %>
+        <%= td_for admin_user, :id, :email, :admin %>
         <%= td_action_for admin_user %>
       </tr>
     <% end %>
