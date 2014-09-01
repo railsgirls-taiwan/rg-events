@@ -3,7 +3,7 @@ zh-TW:
     models:
       user: 成員
       event: 活動
-      field: 欄位
+      field: 報名表
       attendee: 報名
     attributes:
       user:
@@ -16,8 +16,8 @@ zh-TW:
         description: 活動內容
       field:
         event_id:
-        name: 名稱
-        type: 類別
+        name: 欄位名稱
+        type: 欄位類別
         required: 必填
         multiple: 多選
         option_items: 選項

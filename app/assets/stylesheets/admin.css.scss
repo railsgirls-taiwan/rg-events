@@ -67,19 +67,28 @@ header {
   float: left;
   left: 270px;
   top: 0;
+  width: 850px;
   padding: 10px 0;
   .table {
-    width: 850px;
+    width: 100%;
+    .glyphicon-trash {
+      position: relative;
+      left: -5px;
+      top: 5px;
+    }
     thead {
       text-align: left;
       font-weight: bolder;
       padding: 10px 0;
-      font-size: 25px;
+      font-size: 20px;
       line-height: 2;
     }
     tbody {
       font-size: 22px;
       line-height: 2;
     }
+  }
+  .form-inputs {
+    font-size: 26px;
   }
 }

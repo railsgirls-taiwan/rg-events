@@ -1,5 +1,3 @@
-<h1><%= t('crud.new!', resource: Admin::Event.model_name.human) %></h1>
+<h1 class="text-center"><%= t('crud.new!', resource: Admin::Event.model_name.human) %></h1>
 
 <%= render 'form' %>
-<hr>
-<%= link_to t('action.back'), admin_events_path, class: 'btn btn-default btn-lg' %>

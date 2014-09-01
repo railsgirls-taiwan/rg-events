@@ -1,15 +1,15 @@
 <%= simple_nested_form_for(@admin_event) do |f| %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :date, as: :string, input_html: { class: "datetime_picker" } %>
-    <%= f.input :place %>
+    <%= f.input :title, input_html: {class: 'input-lg'} %>
+    <%= f.input :date, as: :string, input_html: { class: "datetime_picker input-lg" } %>
+    <%= f.input :place, input_html: {class: 'input-lg'} %>
     <%= f.input :description, input_html: {class: :redactor} %>
     <%= render 'form_fields', f: f %>
   </div>
   <hr>
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-lg btn-primary' %>
+    <%= f.button :submit, class: 'btn btn-lg btn-danger center-block' %>
   </div>
 <% end %>
 <script type="text/javascript">
