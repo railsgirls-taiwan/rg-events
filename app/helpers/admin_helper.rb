@@ -24,6 +24,8 @@ module AdminHelper
                    elsif val.version_exists?(:thumb) && val.thumb.present? then val.thumb
                    else val end
         link_to image_tag(uploader, height: 100), val.url
+      when ActiveSupport::TimeWithZone
+        val = val.strftime('%Y-%m-%d %H:%M')
       else val
       end
     end

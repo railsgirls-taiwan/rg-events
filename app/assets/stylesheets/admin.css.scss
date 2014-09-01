@@ -3,7 +3,7 @@
 //= require bootstrap
 //= require bootstrap-datetimepicker_min
 //= require_self
-//= require_tree ./admin
+
 // admin/_navbar.html.erb
 
 header {
@@ -69,26 +69,31 @@ header {
   top: 0;
   width: 850px;
   padding: 10px 0;
+  h2 {
+    padding-left: 35px;
+    padding-bottom: 5px;
+    &:before {
+      content: " ";
+      display: block;
+      width: 10px;
+      height: 10px;
+      position: relative;
+      left: -35px;
+      top: 30px;
+      border: 15px solid transparent;
+      border-left: 25px solid #d3360b;
+    }
+  }
   .table {
     width: 100%;
-    .glyphicon-trash {
-      position: relative;
-      left: -5px;
-      top: 5px;
-    }
     thead {
       text-align: left;
       font-weight: bolder;
       padding: 10px 0;
-      font-size: 20px;
       line-height: 2;
     }
     tbody {
-      font-size: 22px;
       line-height: 2;
     }
-  }
-  .form-inputs {
-    font-size: 26px;
   }
 }
