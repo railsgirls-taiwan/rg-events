@@ -6,6 +6,7 @@ class Admin::EventsController < AdminController
   end
 
   def show
+    @admin_event.date = @admin_event.date.strftime('%Y-%m-%d %H:%M')
   end
 
   def new
@@ -51,7 +52,7 @@ class Admin::EventsController < AdminController
 
   def admin_event_params
     params.require(:admin_event)
-          .permit(:title, :date, :place, :description,
+          .permit(:title, :date, :enddate, :place, :address, :description,
                   fields_attributes: %i[id name type required multiple option_items _destroy])
   end
 end

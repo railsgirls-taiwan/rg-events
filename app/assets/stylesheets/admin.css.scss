@@ -70,30 +70,20 @@ header {
   width: 850px;
   padding: 10px 0;
   h2 {
-    padding-left: 35px;
-    padding-bottom: 5px;
-    &:before {
-      content: " ";
-      display: block;
-      width: 10px;
-      height: 10px;
-      position: relative;
-      left: -35px;
-      top: 30px;
-      border: 15px solid transparent;
-      border-left: 25px solid #d3360b;
-    }
+    margin-bottom: 25px;
+    margin-left: -25px;
+    padding-left: 10px;
+    border-left: 10px solid #d3360b;
   }
   .table {
     width: 100%;
     thead {
-      text-align: left;
       font-weight: bolder;
-      padding: 10px 0;
       line-height: 2;
     }
     tbody {
-      line-height: 2;
+      font-size: 20px;
+      line-height: 20px;
     }
   }
 }
