@@ -1,0 +1,24 @@
+.form-horizontal {
+  .control-label {
+    text-align: center;
+  }
+  .attendeeInfo {
+    padding-top: 7px;
+
+  }
+}
+.form-actions {
+  padding-bottom: 100px;
+}
+.update-map {
+  position: relative;
+  left: -15px;
+  top: 25px;
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+}
+.address {
+  border-top-right-radius:0;
+  border-bottom-right-radius:0;
+  border-right: 0;
+}

@@ -1,12 +1,7 @@
 <%= simple_form_for(@admin_attendee, url: [:admin, @admin_event.becomes(Event), @admin_attendee.becomes(Attendee)], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
 
   <div class="form-inputs">
-    <div class="form-group" style="display:none;">
-      <%= label_tag 'admin_attendee_user', Attendee.human_attribute_name(:user), class: 'col-sm-3 control-label' %>
-      <div class="col-sm-9">
-        <%= f.input_field :user_id, value: current_user.id %>
-      </div>
-    </div>
+    <%= f.input_field :user_id, value: current_user.id, as: :hidden %>
     <div class="form-group">
       <%= label_tag 'admin_attendee_user', Attendee.human_attribute_name(:user), class: 'col-sm-3 control-label' %>
       <div class="col-sm-9 attendeeInfo"><%= current_user.name %></div>
@@ -31,6 +26,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: 'col-sm-12 btn btn-danger', style: 'margin-bottom: 50px;' %>
+    <%= f.button :submit, class: 'col-sm-12 btn btn-danger' %>
   </div>
 <% end %>
