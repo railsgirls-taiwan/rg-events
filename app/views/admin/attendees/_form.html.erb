@@ -1,23 +1,29 @@
 <%= simple_form_for(@admin_attendee, url: [:admin, @admin_event.becomes(Event), @admin_attendee.becomes(Attendee)], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
 
   <div class="form-inputs">
-    <div class="form-group">
-      <%= label_tag 'admin_attendee_user', Attendee.human_attribute_name(:user), class: 'col-sm-1 control-label' %>
+    <div class="form-group" style="display:none;">
+      <%= label_tag 'admin_attendee_user', Attendee.human_attribute_name(:user), class: 'col-sm-3 control-label' %>
       <div class="col-sm-9">
-        <%= f.input_field :user_id %>
+        <%= f.input_field :user_id, value: current_user.id %>
       </div>
     </div>
     <div class="form-group">
-      <%= label_tag 'admin_attendee_event', Attendee.human_attribute_name(:event), class: 'col-sm-1 control-label' %>
-      <div class="col-sm-9">
-        <%= f.input_field :event_id, as: :string, class: 'select2-single', data: {model: :Event, column: :title, text: @admin_attendee.event.try(:title).to_s} %>
-      </div>
+      <%= label_tag 'admin_attendee_user', Attendee.human_attribute_name(:user), class: 'col-sm-3 control-label' %>
+      <div class="col-sm-9 attendeeInfo"><%= current_user.name %></div>
+    </div>
+    <div class="form-group">
+      <%= label_tag 'admin_attendee_user_email', Attendee.human_attribute_name(:email), class: 'col-sm-3 control-label' %>
+      <div class="col-sm-9 attendeeInfo"><%= current_user.email %></div>
+    </div>
+    <div class="form-group">
+      <%= label_tag 'admin_attendee_user_tel', Attendee.human_attribute_name(:tel), class: 'col-sm-3 control-label' %>
+      <div class="col-sm-9 attendeeInfo"><%= current_user.tel %></div>
     </div>
 
-    <% @admin_event.fields.each do |field| %>
+    <% @admin_event.fields.order('id ASC').each do |field| %>
       <div class="form-group <%= has_error_class @admin_attendee, field %>">
-        <%= label_tag 'xxx', "#{'*' if field.required? }#{field.name}", class: 'col-sm-1 control-label' %>
-        <div class="col-sm-9">
+        <%= label_tag 'xxx', "#{'*' if field.required? }#{field.name}", class: 'col-sm-3 control-label' %>
+        <div class="col-sm-9 attendeeInfo">
           <%= build_input @admin_attendee, field %>
         </div>
       </div>
@@ -25,6 +31,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-lg btn-primary' %>
+    <%= f.button :submit, class: 'col-sm-12 btn btn-danger', style: 'margin-bottom: 50px;' %>
   </div>
 <% end %>

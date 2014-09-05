@@ -49,3 +49,7 @@ gem 'rails-assets-select2'
 gem 'rails-assets-bootstrap'
 gem 'rmagick', require: 'RMagick'
 
+group :development do
+  gem 'hirb'
+  gem 'hirb-unicode'
+end
