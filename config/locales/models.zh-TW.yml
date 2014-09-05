@@ -10,12 +10,13 @@ zh-TW:
         email: 電子郵件
         name: 名稱
         password: 密碼
+        password_confirmation: 確認密碼
         tel: 聯絡電話
         admin: 管理者
       event:
         title: 活動名稱
-        date: 活動開始時間
-        enddate: 活動結束時間
+        start_date: 活動開始時間
+        end_date: 活動結束時間
         place: 活動地點
         address: 活動地址
         description: 活動內容

@@ -1,7 +1,7 @@
 <h2><%= t('crud.show!', resource: Admin::Event.model_name.human) %></h2>
 <div>
   <h3>活動名稱：<%= @admin_event.title %></h3>
-  <h3>活動時間：<%= @admin_event.date.strftime('%Y-%m-%d %H:%M') %> ～ <%= @admin_event.enddate.strftime('%Y-%m-%d %H:%M') %></h3>
+  <h3>活動時間：<%= @admin_event.start_date.strftime('%Y-%m-%d %H:%M') %> ～ <%= @admin_event.end_date.strftime('%Y-%m-%d %H:%M') %></h3>
   <h3>活動地點：<%= @admin_event.place %></h3>
   <h3>活動地址：<%= @admin_event.address %></h3>
   <div id="map-canvas" style="width: 100%; height: 200px; margin-bottom: 20px;"></div>
