@@ -50,6 +50,7 @@ gem 'rails-assets-bootstrap'
 gem 'rmagick', require: 'RMagick'
 
 group :development do
+  gem 'pry'
   gem 'hirb'
   gem 'hirb-unicode'
 end
