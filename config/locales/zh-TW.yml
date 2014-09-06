@@ -1,3 +1,13 @@
 zh-TW:
   "true": 是
   "false": 否
+  errors:
+    messages:
+      invalid_date: "無效的日期"
+      invalid_time: "無效的時間"
+      invalid_datetime: "無效的日期時間"
+      is_at: "必須是 %{restriction}"
+      before: "必須在 %{restriction} 之前"
+      on_or_before: "必須在 %{restriction} 之前或當天"
+      after: "必須在 %{restriction} 之後"
+      on_or_after: "必須在 %{restriction} 之後或當天"

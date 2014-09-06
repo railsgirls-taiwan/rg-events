@@ -48,9 +48,8 @@ gem 'enumerize'
 gem 'rails-assets-select2'
 gem 'rails-assets-bootstrap'
 gem 'rmagick', require: 'RMagick'
+gem 'validates_timeliness'
 
 group :development do
-  gem 'pry'
-  gem 'hirb'
-  gem 'hirb-unicode'
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
 end
