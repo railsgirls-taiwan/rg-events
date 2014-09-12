@@ -1,19 +1,81 @@
 <%= simple_nested_form_for(@admin_event) do |f| %>
 
   <div class="form-inputs">
-    <%= f.input :title, input_html: {class: 'input-lg'} %>
-    <%= f.input :date, as: :string, input_html: { class: "datetime_picker input-lg" } %>
-    <%= f.input :place, input_html: {class: 'input-lg'} %>
-    <%= f.input :description, input_html: {class: :redactor} %>
+    <%= f.input :title %>
+    <div class="row">
+      <div class='col-sm-6'>
+        <%= f.input :start_date, as: :string, input_html: { class: "datetime_picker" } %>
+      </div>
+      <div class='col-sm-6'>
+        <%= f.input :end_date, as: :string, input_html: { class: "datetime_picker" } %>
+      </div>
+    </div>
+    <%= f.input :place %>
+    <div class="row">
+      <div class="col-sm-10">
+        <%= f.input :address, input_html: { class: "address" } %>
+      </div>
+      <div id="update-map" class="col-sm-2 btn btn-danger update-map">更新地圖</div>
+    </div>
+    <div id="map-canvas" class="map-canvas"></div>
+    <%= f.input :description, input_html: { class: :redactor } %>
     <%= render 'form_fields', f: f %>
   </div>
   <hr>
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-lg btn-danger center-block' %>
+    <%= f.button :submit, class: 'col-sm-12 btn btn-danger' %>
   </div>
 <% end %>
+
 <script type="text/javascript">
   $('.datetime_picker').datetimepicker({
     language: 'zh-TW'
+  });
+</script>
+<script>
+  $(document).ready(function(){
+    var map;
+    var geocoder;
+    var marker
+    function initialize() {
+      geocoder = new google.maps.Geocoder();
+      var mapOptions = {
+        zoom: 12,
+        center: new google.maps.LatLng(25.048796, 121.517443)
+      };
+      map = new google.maps.Map(document.getElementById('map-canvas'),
+          mapOptions);
+    }
+    function setMapCenter(lat, lng){
+      map.setCenter(new google.maps.LatLng(lat, lng))
+    }
+    function addMarker(location) {
+      marker = new google.maps.Marker({
+        position: location,
+        map: map
+      });
+    }
+    function clearMarkers() {
+      if(marker){
+        marker.setMap(null);
+      }
+    }
+    $("#update-map").click(function(){
+      clearMarkers();
+      var address = $("#admin_event_address").val();
+      geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          map.setCenter(results[0].geometry.location);
+          map.setZoom(15);
+          marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+          });
+        } else {
+          alert('找不到該地點！請重新輸入！');
+        }
+      });
+    });
+    google.maps.event.addDomListener(window, 'load', initialize);
   });
 </script>

@@ -1,11 +1,14 @@
 <%= simple_form_for(@admin_user) do |f| %>
 
   <div class="form-inputs">
-    <%= f.input :email %>
+    <%= f.input :name %>
+    <%= f.input :email, placeholder: 'Ex: user@example.com' %>
+    <%= f.input :tel, placeholder: 'Ex: 0988123123，必須全是數字！' %>
     <%= f.input :password %>
+    <%= f.input :password_confirmation %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-lg btn-primary' %>
+    <%= f.button :submit, class: 'col-sm-12 btn btn-danger' %>
   </div>
 <% end %>

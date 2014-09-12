@@ -5,4 +5,10 @@ class Event < ActiveRecord::Base
   has_many :attendees
   has_many :fields
   accepts_nested_attributes_for :fields
+
+  validates_datetime :end_date, :after => :start_date
+  validates :title, :start_date, :end_date, :description, :presence => true
+
+  private
+
 end

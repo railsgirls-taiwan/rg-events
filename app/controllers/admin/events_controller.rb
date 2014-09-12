@@ -2,10 +2,11 @@ class Admin::EventsController < AdminController
   before_action :set_admin_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @admin_events = Admin::Event.all
+    @admin_events = Admin::Event.all.order('start_date DESC')
   end
 
   def show
+    @admin_event.start_date = @admin_event.start_date.strftime('%Y-%m-%d %H:%M')
   end
 
   def new
@@ -51,7 +52,7 @@ class Admin::EventsController < AdminController
 
   def admin_event_params
     params.require(:admin_event)
-          .permit(:title, :date, :place, :description,
+          .permit(:title, :start_date, :end_date, :place, :address, :description,
                   fields_attributes: %i[id name type required multiple option_items _destroy])
   end
 end
