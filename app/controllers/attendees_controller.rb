@@ -17,7 +17,7 @@ class AttendeesController < ApplicationController
     @attendee = @event.attendees.new(attendee_params)
     @attendee.user = current_user
     if @attendee.save
-      redirect_to @attendee
+      redirect_to event_path(@event)
     else
       render :new
     end

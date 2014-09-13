@@ -1,15 +1,24 @@
 <% @events.each do |event| %>
-  <div class="row thumbnail">
-    <div class="caption">
+<div class="row">
+  <div class="oneevent">
+    <div class="eventsdate">
+      <p><span><%=event.start_date.day%></span></p>
+      <p><%=event.start_date.strftime('%b')%></p>
+      <p><%=event.start_date.year%></p>
+    </div>
+    <div class="eventstext">
       <h2><%=link_to event.title, event_path(event)%></h2>
-      <p>
-        <span class="glyphicon glyphicon-calendar"></span>
-        <%=event.date.to_formatted_s(:short) %>
-      </p>
-      <p>
-        <span class="glyphicon glyphicon-road"></span>
-        <%=event.place%>
-      </p>
+      <ul>
+        <li><span class="glyphicon glyphicon-road"></span>
+          活動地點：<b><%=event.place%></b>
+        </li>
+        <li><span class="glyphicon glyphicon-calendar"></span>
+          活動時間：
+          <b><%=event.start_date.strftime('%Y-%m-%d %H:%M') %></b>
+        </li>
+      </ul>
+      <p><%=sanitize event.description %></p>
     </div>
   </div>
+</div>
 <%end%>
