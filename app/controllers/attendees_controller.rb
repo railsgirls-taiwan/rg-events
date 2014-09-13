@@ -1,5 +1,5 @@
 class AttendeesController < ApplicationController
-  before_action :set_event, only: %i[new create]
+  before_action :set_event, only: %i[new create destroy]
 
   def index
     @attendees = current_user.attendees
@@ -21,6 +21,11 @@ class AttendeesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    Attendee.find(params[:id]).destroy
+    redirect_to events_path#(@attendee.event)
   end
 
   private
