@@ -1,6 +1,8 @@
 zh-TW:
   action:
     back: 返回
+    regist: 我要報名
+    unregist: 取消報名
   message:
     are_you_sure: 你確定？
   crud:

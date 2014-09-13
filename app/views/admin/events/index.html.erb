@@ -1,7 +1,7 @@
 <table class="table">
   <thead>
     <tr>
-      <%= th_for Admin::Event, :date, :title, :place %>
+      <%= th_for Admin::Event, :start_date, :title, :place %>
       <th></th>
       <th></th>
       <th></th>
@@ -12,7 +12,7 @@
   <tbody>
     <% @admin_events.each do |admin_event| %>
       <tr>
-        <%= td_for admin_event, :date, :title, :place %>
+        <%= td_for admin_event, :start_date, :title, :place %>
         <td><%= link_to Attendee.model_name.human, [admin_event, Attendee] %></td>
         <%= td_action_for admin_event %>
       </tr>

@@ -67,3 +67,130 @@ table {
 * {
   box-sizing: border-box;
 }
+
+.front_content{
+  border: 1px #FFFFFF solid;
+  box-shadow: 1px 1px 8px #d8d8d8;
+  background-color: #FFFFFF;
+}
+
+.oneevent
+{
+  position: relative;
+  z-index: 100;
+  float: left;
+  margin-bottom: 12px;
+  padding-top: 20px;
+  padding-right: 0px;
+  padding-bottom: 20px;
+  padding-left: 200px;
+}
+
+.oneevent:hover .eventsdate
+{
+  background-color: #ffffff;
+  background-image: none;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: auto auto;
+  border-top-width: 1px;
+  border-right-width-value: 1px;
+  border-bottom-width: 1px;
+  border-left-width-value: 1px;
+  border-top-style: solid;
+  border-right-style-value: solid;
+  border-bottom-style: solid;
+  border-left-style-value: solid;
+  border-top-color: #e7453a;
+  border-right-color-value: #e7453a;
+  border-bottom-color: #e7453a;
+  border-left-color-value: #e7453a;
+  border-image-source: none;
+  border-image-slice: 100% 100% 100% 100%;
+  border-image-width: 1 1 1 1;
+  border-image-outset: 0 0 0 0;
+  border-image-repeat: stretch stretch;
+}
+
+.oneevent ul
+{
+  width: 95%;
+  float: left;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 12px;
+  margin-left: 0px;
+  padding-top: 5px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #ffffff;
+}
+
+
+.oneevent p
+{
+  margin-bottom: 22px;
+  width: 100%;
+  float: left;
+}
+
+
+.oneevent p
+{
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.oneevent:hover .eventsdate p
+{
+  color: #e7453a;
+}
+
+.eventsdate p
+{
+  margin-bottom: 0px;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.eventsdate p span
+{
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.eventsdate
+{
+  left: 50px;
+  position: absolute;
+  top: 60%;
+  height: 120px;
+  width: 120px;
+  padding-top: 13px;
+  margin-top: -70px;
+  text-align: center;
+  background-color: #e7453a;
+  background-image: none;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: auto auto;
+  border-top-left-radius: 500px;
+  border-top-right-radius: 500px;
+  border-bottom-right-radius: 500px;
+  border-bottom-left-radius: 500px;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+}

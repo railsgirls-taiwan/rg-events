@@ -1,10 +1,7 @@
+<h2><%= t('crud.show!', resource: Admin::Attendee.model_name.human) %></h2>
 <table class="table table-striped table-bordered">
-  <thead>
-    <th>屬性</th>
-    <th>值</th>
-  </thead>
   <tbody>
-    <%= tr_for @admin_attendee, :id, %i[user email], %i[event title] %>
+    <%= tr_for @admin_attendee, :id, %i[user name], %i[user email] %>
     <% @admin_attendee.field_values.each do |field_value| %>
       <tr>
         <td><%= field_value.field.name %></td>
@@ -13,8 +10,3 @@
     <% end %>
   </tbody>
 </table>
-
-<div class="btn-group">
-  <%= link_to t('crud.edit'), edit_admin_event_attendee_path(@admin_event, @admin_attendee), class: 'btn btn-info btn-lg' %>
-  <%= link_to t('action.back'), admin_event_attendees_path, class: 'btn btn-default btn-lg' %>
-</div>

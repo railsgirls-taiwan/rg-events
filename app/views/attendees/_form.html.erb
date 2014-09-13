@@ -1,0 +1,31 @@
+<%= simple_form_for(@attendee, url: [@event, @attendee], wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input_field :user_id, value: current_user.id, as: :hidden %>
+    <div class="form-group">
+      <%= label_tag 'attendee_user', Attendee.human_attribute_name(:user), class: 'col-sm-3 control-label' %>
+      <div class="col-sm-9 attendee-infos"><%= current_user.name %></div>
+    </div>
+    <div class="form-group">
+      <%= label_tag 'attendee_user_email', Attendee.human_attribute_name(:email), class: 'col-sm-3 control-label' %>
+      <div class="col-sm-9 attendee-infos"><%= current_user.email %></div>
+    </div>
+    <div class="form-group">
+      <%= label_tag 'attendee_user_tel', Attendee.human_attribute_name(:tel), class: 'col-sm-3 control-label' %>
+      <div class="col-sm-9 attendee-infos"><%= current_user.tel %></div>
+    </div>
+
+    <% @event.fields.order('id ASC').each do |field| %>
+      <div class="form-group <%= has_error_class @attendee, field %>">
+        <%= label_tag 'xxx', "#{'*' if field.required? }#{field.name}", class: 'col-sm-3 control-label' %>
+        <div class="col-sm-9 attendee-infos">
+          <%= build_input @attendee, field %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, t('action.regist'), class: 'col-sm-12 btn btn-success' %>
+  </div>
+<% end %>

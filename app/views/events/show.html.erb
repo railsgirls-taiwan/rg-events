@@ -1,2 +1,23 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+  <h1><%= @event.title%></h1>
+  <p>
+    <span class="glyphicon glyphicon-calendar"></span>
+    <%=@event.start_date.strftime('%Y-%m-%d %H:%M')  %>
+  </p>
+  <p>
+    <span class="glyphicon glyphicon-road"></span>
+    <%=@event.place%>
+  </p>
+  <p>
+    <%=sanitize @event.description%>
+  </p>
+
+
+  <!-- regist manipulate -->
+  <% @attendee = @event.attendees.where(:user_id => current_user.id).first%>
+  <% if @attendee %>
+    <%= link_to t('action.unregist'), event_attendee_path(@event,@attendee), method: :delete, class: 'btn btn-danger btn-lg'%>
+  <%else%>
+    <%= link_to t('action.regist'), new_event_attendee_path(@event), class: 'btn btn-success btn-lg'%>
+  <%end%>
+
+  <%= link_to t('action.back'),events_path, class: 'btn btn-default btn-lg' %>

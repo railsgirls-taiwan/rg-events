@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require bootstrap-datetimepicker_min
 //= require bootstrap-datetimepicker_zh-TW
