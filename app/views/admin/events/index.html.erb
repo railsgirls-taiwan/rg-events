@@ -1,3 +1,4 @@
+<h2><%= Admin::Event.model_name.human %></h2>
 <table class="table">
   <thead>
     <tr>
@@ -13,7 +14,7 @@
     <% @admin_events.each do |admin_event| %>
       <tr>
         <%= td_for admin_event, :start_date, :title, :place %>
-        <td><%= link_to Attendee.model_name.human, [admin_event, Attendee] %></td>
+        <td><%= link_to Attendee.model_name.human, [admin_event, Attendee] %>(<%= admin_event.attendees.count %>)</td>
         <%= td_action_for admin_event %>
       </tr>
     <% end %>

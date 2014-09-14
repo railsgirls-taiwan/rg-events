@@ -21,7 +21,6 @@
     <%= f.input :description, input_html: { class: :redactor } %>
     <%= render 'form_fields', f: f %>
   </div>
-  <hr>
   <div class="form-actions">
     <%= f.button :submit, class: 'col-sm-12 btn btn-danger' %>
   </div>
@@ -41,7 +40,8 @@
       geocoder = new google.maps.Geocoder();
       var mapOptions = {
         zoom: 12,
-        center: new google.maps.LatLng(25.048796, 121.517443)
+        center: new google.maps.LatLng(25.048796, 121.517443),
+        scrollwheel: false
       };
       map = new google.maps.Map(document.getElementById('map-canvas'),
           mapOptions);

@@ -1,3 +1,4 @@
+<h2><%= t('crud.show!', resource: Admin::User.model_name.human) %></h2>
 <table class="table">
   <thead>
     <th>屬性</th>
@@ -7,7 +8,3 @@
     <%= tr_for @admin_user, :id, :name, :email, :tel, :admin %>
   </tbody>
 </table>
-<div class="btn-group">
-  <%= link_to t('crud.edit'), edit_admin_user_path(@admin_user), class: 'btn btn-info btn-lg' %>
-  <%= link_to t('action.back'), admin_users_path, class: 'btn btn-default btn-lg' %>
-</div>
