@@ -4,11 +4,10 @@
   }
   .attendee-infos {
     padding-top: 7px;
-
   }
 }
 .form-actions {
-  padding-bottom: 100px;
+  padding: 70px 0 100px;
 }
 .update-map {
   position: relative;
@@ -21,4 +20,10 @@
   border-top-right-radius:0;
   border-bottom-right-radius:0;
   border-right: 0;
+}
+.row {
+  .attendee-label {
+    text-align: center;
+    font-weight: bold;
+  }
 }

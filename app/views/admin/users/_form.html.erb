@@ -1,5 +1,4 @@
-<%= simple_form_for(@admin_user) do |f| %>
-
+<%= simple_form_for(@admin_user, wrapper: :horizontal_form, html: {class: 'form-horizontal'}) do |f| %>
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :email, placeholder: 'Ex: user@example.com' %>
@@ -7,7 +6,6 @@
     <%= f.input :password %>
     <%= f.input :password_confirmation %>
   </div>
-
   <div class="form-actions">
     <%= f.button :submit, class: 'col-sm-12 btn btn-danger' %>
   </div>
