@@ -1,0 +1,80 @@
+.front_content {
+  border: 1px #fff solid;
+  box-shadow: 1px 1px 8px #d8d8d8;
+  background-color: #fff;
+}
+
+.oneevent {
+  position: relative;
+  z-index: 100;
+  float: left;
+  margin-bottom: 12px;
+  padding: 20px 0 20px 200px;
+}
+
+.oneevent:hover .eventsdate {
+  background-color: #fff;
+  border-top: 1px solid #e7453a;
+  border-right-value: 1px solid #e7453a;
+  border-bottom: 1px solid #e7453a;
+  border-left-value: 1px solid #e7453a;
+}
+
+.oneevent ul {
+  width: 95%;
+  float: left;
+  margin: 0 0 12px 0;
+  padding: 5px 0 0 0;
+  border-bottom: 1px solid #fff;
+}
+
+
+.oneevent p {
+  margin-bottom: 22px;
+  width: 100%;
+  float: left;
+}
+
+
+.oneevent p {
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.oneevent:hover .eventsdate p {
+  color: #e7453a;
+}
+
+.eventsdate p {
+  margin-bottom: 0px;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.eventsdate p span {
+  font-weight: bold;
+  font-size: 27px;
+}
+
+.eventsdate {
+  left: 50px;
+  position: absolute;
+  top: 60%;
+  height: 120px;
+  width: 120px;
+  padding-top: 13px;
+  margin-top: -70px;
+  text-align: center;
+  background-color: #e7453a;
+  border-radius: 500px;
+  transition: all .5s ease;
+}
+
+.eventstext {
+  width: 80%;
+  img {
+    width: 100%;
+  }
+}
